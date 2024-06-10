@@ -53,6 +53,9 @@ RollDice.addEventListener('click', function () {
 })
 
 
+
+
+
 btnHold.addEventListener('click', function () {
   if (platying) {
   //add current score 
