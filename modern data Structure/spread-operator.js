@@ -110,3 +110,27 @@ addNumbers(...XL)
 
 //last practice Rest pattern and parameters
  hotelRestaurant.orderPizza('mushroom', 'beef', 'ONION' , 'SALAD');
+
+
+ console.log('-----------OR operator ----------------');
+ console.log('ahmed' || 0) //ahmed because the 0 is a falsy value 
+ console.log(12 || 'ahmed' || undefined) //12 for short circuit
+ console.log(null || undefined) // null
+ console.log(undefined || null | 0 || 'ali' || 23 || 'hello') //ali
+
+ const guest1 = hotelRestaurant.numOfGuest ? hotelRestaurant.numOfGuest : 10; // 10 because numOfGuest is undefined
+ hotelRestaurant.numOfGuest = 40;
+ const guest2 = hotelRestaurant.numOfGuest ? hotelRestaurant.numOfGuest : 10; // numOfGuest 40 
+
+ console.log('-----------AND operator ----------------');
+
+ console.log('ahmed' || 0) //ahmed because the ahmed is a truthy value 
+ console.log('ahmed' || 23 || 0 || 'hello') //evaluation continue until find the falsy value 
+
+
+
+ console.log('-----------Nullish operator ----------------');
+
+hotelRestaurant.seats= 0;
+const availableSeats = hotelRestaurant.seats ?? 10;
+console.log(availableSeats)
