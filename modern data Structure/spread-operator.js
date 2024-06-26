@@ -18,6 +18,10 @@ const hotelRestaurant = {
 
     orderPasta : function (ing1 , ing2 , ing3) {
         console.log(`here is your delicious pasta ${ing1}, ${ing2} and ${ing3}`)
+    },
+    orderPizza : function (mainPizza , ...otherPizza) {
+        console.log(mainPizza)
+        console.log(otherPizza)
     }
 };
 
@@ -67,3 +71,42 @@ newRestaurantCopy.name = 'somaliland restaurant';
 console.log(newRestaurantCopy);
 console.log(hotelRestaurant)
 
+
+
+// rest pATTERN 1) Destructuring
+
+// spread become a right side =
+const spreadArray = [ 2, 3 ,3 , ...[ 4 , 8]];
+
+//rest pattern become a left side =
+const [ b , c , ...restArray] =  [0 , 4 , 3 , 2  , 5];
+console.log(b , c , restArray);
+
+//example 2 
+const [steak , oatmeal , ...others] = [...hotelRestaurant.mainMenu , ...hotelRestaurant.starterMenu]
+console.log(steak , oatmeal , others)
+
+
+//rest pattern in object
+const { monday, ...weekdays} = hotelRestaurant.openHours;
+console.log(weekdays)
+
+//  rest pattern 2) function
+const addNumbers = function (...nums) {
+  let sum = 0;
+  for (let i = 0; i < nums.length; i++) 
+    sum += nums[i];
+    console.log(sum);
+  
+};
+
+addNumbers(9 ,9);
+addNumbers(10 ,20 ,27 ,9);
+addNumbers(9+8 ,9);
+
+//next level
+const XL = [ 6 ,7, 88];
+addNumbers(...XL)
+
+//last practice Rest pattern and parameters
+ hotelRestaurant.orderPizza('mushroom', 'beef', 'ONION' , 'SALAD');
